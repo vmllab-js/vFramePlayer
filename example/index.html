@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FramePlayer</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="../src/frameplayer.js"></script>
+    <script>
+        $(document).ready(function(){
+            var imgArr = [];
+            for(var i=0;i<151;i++){
+                imgArr.push("image/"+i+".jpg");
+            }
+
+            var framePlayer = new frameplayer($(".framePlayer")[0],imgArr);
+            framePlayer.play();
+        });
+    </script>
+</head>
+<body>
+<div class="framePlayer">
+
+</div>
+</body>
+</html>
