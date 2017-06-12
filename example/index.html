@@ -12,8 +12,37 @@
                 imgArr.push("image/"+i+".jpg");
             }
 
-            var framePlayer = new frameplayer($(".framePlayer")[0],imgArr);
+            var framePlayer = new FramePlayer({
+                dom : $(".framePlayer")[0],
+                imgArr : imgArr,
+                loop : 3,
+                yoyo : true,
+                isCanvas : true
+            });
+
+            framePlayer.on("play",function(){
+                console.log("开始播放");
+            });
+
+            framePlayer.on("stop",function(){
+                console.log("停止播放");
+            });
+
+//            framePlayer.one("update",function(frame,times,asc){
+//                console.log(frame,times,asc);
+//            });
+
+            framePlayer.set({"fps":20});
+//            framePlayer.set("fps",20);
+
+            framePlayer.play(50,10,{"fps":10,"yoyo":true,onComplete:function(){
+                console.log("完成播放");
+            },onUpdate:function(frame,times,asc){
+                console.log(frame,times,asc);
+            }});
+
             framePlayer.play();
+
         });
     </script>
 </head>
