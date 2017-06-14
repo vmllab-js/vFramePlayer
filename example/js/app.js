@@ -45,7 +45,7 @@ $(document).ready(function(){
                 imgArr : imgArr,
                 loop : 3,
                 yoyo : true,
-                isCanvas : true
+                useCanvas : true
             });
 
             framePlayer.goto(framePlayer.get("startFrame"));
@@ -56,7 +56,7 @@ $(document).ready(function(){
                 $(".fps").val(framePlayer.get("fps"));
                 $(".start").val(framePlayer.get("startFrame")).attr("max",imgArr.length-1);
                 $(".end").val(framePlayer.get("endFrame")).attr("max",imgArr.length-1);
-                var mode_id = framePlayer.get("isCanvas")?0:1;
+                var mode_id = framePlayer.get("useCanvas")?0:1;
                 $(".mode[name='mode']").eq(mode_id).attr('checked','true');
             };
 
@@ -99,8 +99,8 @@ $(document).ready(function(){
                 var start = $(".start").val();
                 var end = $(".end").val();
                 var $selectedvalue = $("input[name='mode']:checked").val();
-                var isCanvas = $selectedvalue === "true";
-                framePlayer.play(start,end,{"fps":fps,"yoyo":yoyo,"isCanvas":isCanvas,onComplete:function(){
+                var useCanvas = $selectedvalue === "true";
+                framePlayer.play(start,end,{"fps":fps,"yoyo":yoyo,"useCanvas":useCanvas,onComplete:function(){
 //                      console.log("完成播放");
                 },onUpdate:function(frame,times,asc){
 //                      console.log(frame,times,asc);
@@ -131,8 +131,8 @@ $(document).ready(function(){
 
             $(".mode").on("change",function(){
                 var $selectedvalue = $("input[name='mode']:checked").val();
-                var isCanvas = $selectedvalue === "true";
-                framePlayer.set("isCanvas",isCanvas);
+                var useCanvas = $selectedvalue === "true";
+                framePlayer.set("useCanvas",useCanvas);
             });
 
             $(".times").on("change",function(){
