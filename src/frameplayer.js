@@ -33,7 +33,7 @@
 
     var FramePlayer = function (options) {
         var _this = this;
-        if(!options){
+        if(!options) {
             console.log("请设置参数！");
             return;
         }
