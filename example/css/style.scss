@@ -11,6 +11,7 @@ body {
   margin:30px auto 30px auto;
   position:relative;
   border:1px solid #000;
+  -webkit-box-shadow:0 0 20px rgba(0,0,0,0.5);
 }
 
 .framePlayer {
@@ -49,7 +50,7 @@ body {
       width:0;
       height:100%;
       background:#fff;
-      -webkit-transition:all 0.1s linear;
+      //-webkit-transition:all 0.05s linear;
     }
   }
 }
@@ -74,7 +75,8 @@ body {
   &>div {
     margin-bottom:10px;
     span {
-      display:inline-block;width:50px;
+      display:inline-block;
+      width:50px;
     }
   }
   label {
@@ -87,6 +89,9 @@ body {
     border:1px solid #000;
     width:40px;
     text-align:center;
+    &.disabled {
+      background:#b3b3b3;
+    }
   }
   .start {
     @extend .times;

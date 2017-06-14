@@ -1,5 +1,5 @@
 /**
- * frameplayer v0.0.1
+ * frameplayer v0.1.0
  *
  * https://github.com/vmllab-js/FramePlayer | Released under MIT license
  *
@@ -109,9 +109,7 @@
                     _this.height = canvas.height = _this._imgObjArr[0].height;
                 };
 
-                loadImg(this._imgObjArr[0],function(){
-                    setWH();
-                });
+                loadImg(this._imgObjArr[0],setWH);
 
             }else{
 
@@ -148,6 +146,9 @@
                     this._process(_temp.onUpdate,_temp.onComplete);
                 }
             }
+            if(attr === "startFrame"){
+                if(!this._isPlay){this.curFrame = this.startFrame}
+            }
         },
         get : function (attr) {
 		    return this[attr];
@@ -165,10 +166,10 @@
                 switch (typeof(arguments[i])){
                     case "number" :
                         if(argumentsNum == 0){
-                            _this.startFrame = _this.curFrame = arguments[i];
+                            _this.set("startFrame",arguments[i]);
                             argumentsNum++;
 						}else{
-                            _this.endFrame = arguments[i]
+                            _this.set("endFrame",arguments[i]);
                         }
                         break;
                     case "object" :
@@ -264,9 +265,7 @@
                 _this.trigger("update",_this.curFrame,_this._times+1,_this._asc);
             };
 
-            loadImg(this._imgObjArr[this.curFrame],function(){
-                show();
-            });
+            loadImg(this._imgObjArr[this.curFrame],show);
 
         },
 		pause : function () {

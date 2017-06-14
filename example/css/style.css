@@ -9,7 +9,8 @@ body {
   height: 504px;
   margin: 30px auto 30px auto;
   position: relative;
-  border: 1px solid #000; }
+  border: 1px solid #000;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); }
 
 .framePlayer {
   width: 100%;
@@ -42,8 +43,7 @@ body {
     .control .process_bar .process {
       width: 0;
       height: 100%;
-      background: #fff;
-      -webkit-transition: all 0.1s linear; }
+      background: #fff; }
 
 .info {
   position: absolute;
@@ -75,5 +75,7 @@ body {
     border: 1px solid #000;
     width: 40px;
     text-align: center; }
+    .settings .times.disabled, .settings .disabled.start, .settings .disabled.end, .settings .disabled.fps {
+      background: #b3b3b3; }
 
 /*# sourceMappingURL=style.css.map */
