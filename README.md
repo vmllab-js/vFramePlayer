@@ -49,18 +49,20 @@ var framePlayer = new vFramePlayer({
 
 | Field           | Parameter              | Description                         | 
 | --------------- | :--------------------: | ----------------------------------- |
-| `play()`        | `start,end,options`    | 播放序列图动画。<a href="#play">参数</a> |
-| `goto()`        | `i`                    | 直接跳到第`i`帧，`i`必选。|
+| `play()`        | `start``end``options`  | 播放序列图动画。参数见下表。 |
+| `goto()`        | `i`                    | 直接跳到第`i`帧，`i`必选。type:`number`。 |
 | `pause()`       | none                   | 暂停播放动画。|
 | `stop()`        | none                   | 停止播放动画，重置数据。|
 | `destroy()`     | none                   | 清除所有动画及监听事件。|
+| `get()`         | `attr`                 | 获取参数值。可获取参数同[Options](#options)Field。type:`string`。 |
+| `set()`         | `attr`                 | 设置参数值。可设置参数同[Options](#options)Field。type:`string`。 |
 
 `play()`<span id="play">方法参数：</span>
 
 | Field           | Type        | Default      | Description           | 
 | --------------- | :---------: | ------------ |---------------------- |
 | `start`         | `number`    | `0`          | 播放开始帧，该项可选。   |
-| `end`           | `i`         | last         | 播放结束帧，该项可选。   |
+| `end`           | `i`         | last         | 播放结束帧，该项可选。如果end大于start，则倒序播放。   |
 | `options`       | `object`    | none         | 播放参数，该项可选。同[Options](#options)  |
 
 play options其他参数设置：
