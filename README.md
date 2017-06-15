@@ -52,7 +52,7 @@ var framePlayer = new vFramePlayer({
 
 `play()`方法参数：<span id="play"></span>
 
-| Field           | Parameter   | Default      | Description           | 
+| Field           | Type        | Default      | Description           | 
 | --------------- | :---------: | ------------ |---------------------- |
 | `start`         | `number`    | `0`          | 播放开始帧，该项可选。   |
 | `end`           | `i`         | last         | 播放结束帧，该项可选。   |
@@ -80,15 +80,19 @@ framePlayer.play(10,100,{
 ```
 ## Events
 播放事件的监听及取消监听的方法。
-- `on(events,handler)` - 监听事件
-    - `events` - 监听事件名称，类型：`String`，包括：
-        - `"play"` - 开始播放
-        - `"pause"` - 暂停动画
-        - `"stop"` - 停止动画
-        - `"update"` - 动画播放过程中
-    - `handler` - 监听事件执行方法，类型：`Function`
-- `one(events,handler)` - 监听一次事件，参数同`on()`
-- `off(events,handler)` - 结束监听，参数同`on()`
+
+| Field           | Parameter          | Description           | 
+| --------------- | :----------------: |---------------------- |
+| `on()`          | `events``handler`  | 监听事件。`events` - 监听事件名称，`handler` - 监听事件执行方法。   |
+| `one()`         | `events``handler`  | 监听一次事件。参数同上。   |
+| `off()`         | `events``handler`  | 结束监听。参数同上。   |
+
+事件监听名称：
+- `"play"` - 开始播放
+- `"pause"` - 暂停动画
+- `"stop"` - 停止动画
+- `"update"` - 动画播放过程中
+
 ```JS
 //示例
 framePlayer.on("play",function () {
