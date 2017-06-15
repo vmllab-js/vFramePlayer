@@ -19,7 +19,7 @@ var framePlayer = new vFramePlayer({
     imgArr : imgArr
 });
 ```
-## <span id="Options">Options</span>
+## Options
 实例化对象的时候，你可以使用以下参数配置插件：
 - `dom` - 用于存放图片和CANVAS的DOM节点，该项必选
 - `imgArr` - 图片序列数组，该项必选。类型：`Array`
