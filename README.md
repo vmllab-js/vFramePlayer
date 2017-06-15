@@ -20,14 +20,14 @@ var framePlayer = new vFramePlayer({
 });
 ```
 ## Options
-| Field           | Type            | Default  | Description                         | 
-| --------------- |:---------------:| :------: | ----------------------------------- |
-| `dom`           | `object`        | none     | 用于存放图片和CANVAS的DOM节点，该项必选。|
-| `imgArr`        | `array`         | none     | 图片序列数组，该项必选。|
-| `fps`           | `number`        | `25`     | 设置动画播放每秒显示帧频，该项可选。|
+| Field           | Type            | Default  | Description                           | 
+| --------------- |:---------------:| :------: | ------------------------------------  |
+| `dom`           | `object`        | none     | 用于存放图片和CANVAS的DOM节点，该项必选。 |
+| `imgArr`        | `array`         | none     | 图片序列数组，该项必选。                 |
+| `fps`           | `number`        | `25`     | 设置动画播放每秒显示帧频，该项可选。       |
 | `useCanvas`     | `boolean`       | `true`   | 是否用CANVAS播放动画，该项可选。如果设置为`false`，则使用IMG播放。|
 | `loop`          | `boolean`       | `0`      | 循环播放次数，该项可选。不设置则不循环播放。|
-| `yoyo`          | `boolean`       | `false`  | yoyo球效果，配合`loop`使用，该项可选。如果设置为`true`，循环播放的时候会回播。|
+| `yoyo`          | `boolean`       | `false`  | 配合`loop`使用，该项可选。如果设置为`true`，循环播放的时候会回播。|
 ```JS
 //示例
 var framePlayer = new vFramePlayer({
@@ -41,16 +41,23 @@ var framePlayer = new vFramePlayer({
 ```
 ## Methods
 实例化完成后，你可以使用以下方法进行播放序列图动画：
-- `play(start,end,options)` - 播放序列图动画
-    - `start` - 播放开始帧，该项可选。类型：`Number`，默认值：`0`
-    - `end` - 播放结束帧，该项可选。类型：`Number`，默认值为最后一帧
-    - `options` - 播放参数，该项可选。类型：`Object`，参数[Options](#options)及`onComeplete`、`onUpdate`
-        - `onComplete()` - 播放完成时执行的方法，该项可选。类型：`Function`
-        - `onUpdate(frame,times,asc)` - 播放过程中执行的方法，该项可选。类型：`Function`，回调中的`frame`为当前帧，`times`为已播放次数，`asc`为是否升序播放
-- `goto(i)` - 直接跳到第`i`帧，`i`必选。`i`类型：`Number`
-- `pause()` - 暂停播放动画
-- `stop()` - 停止播放动画，重置数据
-- `destroy()` - 清除所有动画及监听事件
+
+| Field           | Parameter              | Description                         | 
+| --------------- | :--------------------: | ----------------------------------- |
+| `play()`        | `start,end,options`    | 播放序列图动画。[参数](#play) |
+| `goto()`        | `i`                    | 直接跳到第`i`帧，`i`必选。|
+| `pause()`       | none                   | 暂停播放动画。|
+| `stop()`        | none                   | 停止播放动画，重置数据。|
+| `destroy()`     | none                   | 清除所有动画及监听事件。|
+
+`play()`方法参数：<span id="play"></span>
+
+| Field           | Parameter   | Default      | Description           | 
+| --------------- | :---------: | ------------ |---------------------- |
+| `start`         | `number`    | `0`          | 播放开始帧，该项可选。   |
+| `end`           | `i`         | 图片长度      | 播放结束帧，该项可选。   |
+| `options`       | `object`    | none         | 播放参数，该项可选。  参数[Options](#options)及`onComeplete`、`onUpdate`。onComplete()`- 播放完成时执行的方法，该项可选；`onUpdate(frame,times,asc)` - 播放过程中执行的方法，该项可选。类型：`Function`，回调中的`frame`为当前帧，`times`为已播放次数，`asc`为是否升序播放 |
+
 ```JS
 //示例
 framePlayer.play(10,100,{
