@@ -49,7 +49,7 @@ var framePlayer = new vFramePlayer({
 
 | Field           | Parameter              | Description                         | 
 | --------------- | :--------------------: | ----------------------------------- |
-| `play()`        | `start,end,options`    | 播放序列图动画。参数见下表。 |
+| `play()`        | `start,end,options`    | 播放序列图动画。<a href="#play">参数</a> |
 | `goto()`        | `i`                    | 直接跳到第`i`帧，`i`必选。|
 | `pause()`       | none                   | 暂停播放动画。|
 | `stop()`        | none                   | 停止播放动画，重置数据。|
@@ -63,7 +63,7 @@ var framePlayer = new vFramePlayer({
 | `end`           | `i`         | last         | 播放结束帧，该项可选。   |
 | `options`       | `object`    | none         | 播放参数，该项可选。同[Options](#options)  |
 
-#####play options其他参数设置：
+play options其他参数设置：
 - `onComplete()`- 播放完成时执行的方法，该项可选；
 - `onUpdate(frame,times,asc)` - 播放过程中执行的方法，该项可选。
     - `frame` - 当前帧。
