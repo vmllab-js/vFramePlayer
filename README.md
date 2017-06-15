@@ -20,13 +20,14 @@ var framePlayer = new vFramePlayer({
 });
 ```
 ## Options
-实例化对象的时候，你可以使用以下参数配置插件：
-- `dom` - 用于存放图片和CANVAS的DOM节点，该项必选
-- `imgArr` - 图片序列数组，该项必选。类型：`Array`
-- `fps` - 设置动画播放每秒显示帧频，该项可选。类型：`Number`，默认值：`25`
-- `useCanvas` - 是否用CANVAS播放动画，该项可选。如果设置为`false`，则使用IMG播放。类型：`Boolean`，默认值：`true`
-- `loop` - 循环播放次数，该项可选。不设置则不循环播放。类型：`Number`
-- `yoyo` - yoyo球效果，配合`loop`使用，该项可选。如果设置为`true`，循环播放的时候会回播，类型：`Boolean`，默认值：`false`
+| Field           | Type            | Default  | Description                         | 
+| --------------- |:---------------:| :------: | ----------------------------------- |
+| `dom`           | `object`        | none     | 用于存放图片和CANVAS的DOM节点，该项必选。|
+| `imgArr`        | `array`         | none     | 图片序列数组，该项必选。|
+| `fps`           | `number`        | `25`     | 设置动画播放每秒显示帧频，该项可选。|
+| `useCanvas`     | `boolean`       | `true`   | 是否用CANVAS播放动画，该项可选。如果设置为`false`，则使用IMG播放。|
+| `loop`          | `boolean`       | `0`      | 循环播放次数，该项可选。不设置则不循环播放。|
+| `yoyo`          | `boolean`       | `false`  | yoyo球效果，配合`loop`使用，该项可选。如果设置为`true`，循环播放的时候会回播。|
 ```JS
 //示例
 var framePlayer = new vFramePlayer({
