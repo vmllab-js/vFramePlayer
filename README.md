@@ -63,7 +63,7 @@ var framePlayer = new vFramePlayer({
 | `end`           | `i`         | last         | 播放结束帧，该项可选。   |
 | `options`       | `object`    | none         | 播放参数，该项可选。同[Options](#options)  |
 
-######play options其他参数设置：
+#####play options其他参数设置：
 - `onComplete()`- 播放完成时执行的方法，该项可选；
 - `onUpdate(frame,times,asc)` - 播放过程中执行的方法，该项可选。
     - `frame` - 当前帧。
