@@ -58,9 +58,12 @@ var framePlayer = new vFramePlayer({
 | `end`           | `i`         | last         | 播放结束帧，该项可选。   |
 | `options`       | `object`    | none         | 播放参数，该项可选。同[Options](#options)  |
 
-play options其他参数：
+play options其他参数设置：
 - `onComplete()`- 播放完成时执行的方法，该项可选；
-- `onUpdate(frame,times,asc)` - 播放过程中执行的方法，该项可选。回调中的`frame`为当前帧，`times`为已播放次数，`asc`为是否升序播放。
+- `onUpdate(frame,times,asc)` - 播放过程中执行的方法，该项可选。
+    - `frame` - 当前帧。
+    - `times` - 已播放次数。
+    - `asc` - 是否升序播放。
 
 ```JS
 //示例
