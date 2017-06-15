@@ -63,7 +63,7 @@ var framePlayer = new vFramePlayer({
 | --------------- | :---------: | ------------ |---------------------- |
 | `start`         | `number`    | `0`          | 播放开始帧，该项可选。   |
 | `end`           | `i`         | last         | 播放结束帧，该项可选。如果end大于start，则倒序播放。   |
-| `options`       | `object`    | none         | 播放参数，该项可选。同[Options](#options)  |
+| `options`       | `object`    | none         | 播放参数，该项可选。同[Options](#options)。  |
 
 play options其他参数设置：
 - `onComplete()`- 播放完成时执行的方法，该项可选；
