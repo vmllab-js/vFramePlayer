@@ -1,5 +1,9 @@
 # FramePlayer
 序列帧图片播放插件，支持通过Canvas播放，可控制播放速度，可循环播放，甚至倒序播放。
+
+## 示例
+https://vmllab-js.github.io/vFramePlayer/
+
 ## 如何使用
 引入JS核心文件
 ```html
@@ -19,14 +23,15 @@ var framePlayer = new vFramePlayer({
     imgArr : imgArr
 });
 ```
+
 ## Options
 | Field           | Type            | Default  | Description                           | 
 | --------------- |:---------------:| :------: | ------------------------------------  |
 | `dom`           | `object`        | none     | 用于存放图片和CANVAS的DOM节点，该项必选。 |
-| `imgArr`        | `array`         | none     | 图片序列数组，该项必选。                 |
+| `imgArr`        | `array`         | none     | 图片序列数组，该项必选。支持图片地址及base64           |
 | `fps`           | `number`        | `25`     | 设置动画播放每秒显示帧频，该项可选。       |
 | `useCanvas`     | `boolean`       | `true`   | 是否用CANVAS播放动画，该项可选。如果设置为`false`，则使用IMG播放。|
-| `loop`          | `boolean`       | `0`      | 循环播放次数，该项可选。不设置则不循环播放。|
+| `loop`          | `number`        | `0`      | 循环播放次数，该项可选。不设置则不循环播放，`-1`为无限循环。|
 | `yoyo`          | `boolean`       | `false`  | 配合`loop`使用，该项可选。如果设置为`true`，循环播放的时候会回播。|
 ```JS
 //示例
@@ -44,13 +49,13 @@ var framePlayer = new vFramePlayer({
 
 | Field           | Parameter              | Description                         | 
 | --------------- | :--------------------: | ----------------------------------- |
-| `play()`        | `start,end,options`    | 播放序列图动画。[参数](#play) |
+| `play()`        | `start,end,options`    | 播放序列图动画。参数见下表。 |
 | `goto()`        | `i`                    | 直接跳到第`i`帧，`i`必选。|
 | `pause()`       | none                   | 暂停播放动画。|
 | `stop()`        | none                   | 停止播放动画，重置数据。|
 | `destroy()`     | none                   | 清除所有动画及监听事件。|
 
-`play()`方法参数：<span id="play"></span>
+`play()`<span id="play">方法参数：</span>
 
 | Field           | Type        | Default      | Description           | 
 | --------------- | :---------: | ------------ |---------------------- |
@@ -58,7 +63,7 @@ var framePlayer = new vFramePlayer({
 | `end`           | `i`         | last         | 播放结束帧，该项可选。   |
 | `options`       | `object`    | none         | 播放参数，该项可选。同[Options](#options)  |
 
-play options其他参数设置：
+######play options其他参数设置：
 - `onComplete()`- 播放完成时执行的方法，该项可选；
 - `onUpdate(frame,times,asc)` - 播放过程中执行的方法，该项可选。
     - `frame` - 当前帧。
