@@ -28,7 +28,7 @@ var framePlayer = new vFramePlayer({
 | Field           | Type            | Default  | Description                           | 
 | --------------- |:---------------:| :------: | ------------------------------------  |
 | `dom`           | `object`        | none     | 用于存放图片和CANVAS的DOM节点，该项必选。 |
-| `imgArr`        | `array`         | none     | 图片序列数组，该项必选。支持图片地址及base64           |
+| `imgArr`        | `array`         | none     | 图片序列数组，该项必选。支持图片地址及base64。           |
 | `fps`           | `number`        | `25`     | 设置动画播放每秒显示帧频，该项可选。       |
 | `useCanvas`     | `boolean`       | `true`   | 是否用CANVAS播放动画，该项可选。如果设置为`false`，则使用IMG播放。|
 | `loop`          | `number`        | `0`      | 循环播放次数，该项可选。不设置则不循环播放，`-1`为无限循环。|
@@ -49,7 +49,7 @@ var framePlayer = new vFramePlayer({
 
 | Field           | Parameter              | Description                         | 
 | --------------- | :--------------------: | ----------------------------------- |
-| `play()`        | `start``end``options`  | 播放序列图动画。参数见下表。 |
+| `play()`        | `start` `end` `options`  | 播放序列图动画。参数见下表。 |
 | `goto()`        | `i`                    | 直接跳到第`i`帧，`i`必选。type:`number`。 |
 | `pause()`       | none                   | 暂停播放动画。|
 | `stop()`        | none                   | 停止播放动画，重置数据。|
@@ -65,7 +65,7 @@ var framePlayer = new vFramePlayer({
 | `end`           | `i`         | last         | 播放结束帧，该项可选。如果end大于start，则倒序播放。   |
 | `options`       | `object`    | none         | 播放参数，该项可选。同[Options](#options)。  |
 
-play options其他参数设置：
+`play()`方法`options`其他参数设置：
 - `onComplete()`- 播放完成时执行的方法，该项可选；
 - `onUpdate(frame,times,asc)` - 播放过程中执行的方法，该项可选。
     - `frame` - 当前帧。
@@ -93,9 +93,9 @@ framePlayer.play(10,100,{
 
 | Field           | Parameter          | Description           | 
 | --------------- | :----------------: |---------------------- |
-| `on()`          | `events``handler`  | 监听事件。`events` - 监听事件名称，`handler` - 监听事件执行方法。   |
-| `one()`         | `events``handler`  | 监听一次事件。参数同上。   |
-| `off()`         | `events``handler`  | 结束监听。参数同上。   |
+| `on()`          | `events` `handler`  | 监听事件。`events` - 监听事件名称，`handler` - 监听事件执行方法。   |
+| `one()`         | `events` `handler`  | 监听一次事件。参数同上。   |
+| `off()`         | `events` `handler`  | 结束监听。参数同上。   |
 
 事件监听名称：
 - `"play"` - 开始播放
