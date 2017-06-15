@@ -29,6 +29,8 @@ var loadImages = function (Parameter) {
 $(document).ready(function(){
     var info = $(".info");
     var process = $(".process");
+    var settings = $(".settings");
+
     var framePlayer;
 
     var imgArr = [];
@@ -51,13 +53,13 @@ $(document).ready(function(){
             framePlayer.goto(framePlayer.get("startFrame"));
 
             var default_set = function () {
-                $(".yoyo").attr("checked",framePlayer.get("yoyo"));
-                $(".times").val(framePlayer.get("loop"));
-                $(".fps").val(framePlayer.get("fps"));
-                $(".start").val(framePlayer.get("startFrame")).attr("max",imgArr.length-1);
-                $(".end").val(framePlayer.get("endFrame")).attr("max",imgArr.length-1);
+                settings.find(".yoyo").attr("checked",framePlayer.get("yoyo"));
+                settings.find(".times").val(framePlayer.get("loop"));
+                settings.find(".fps").val(framePlayer.get("fps"));
+                settings.find(".start").val(framePlayer.get("startFrame")).attr("max",imgArr.length-1);
+                settings.find(".end").val(framePlayer.get("endFrame")).attr("max",imgArr.length-1);
                 var mode_id = framePlayer.get("useCanvas")?0:1;
-                $(".mode[name='mode']").eq(mode_id).attr('checked','true');
+                settings.find(".mode[name='mode']").eq(mode_id).attr('checked','true');
             };
 
             default_set();
@@ -94,11 +96,11 @@ $(document).ready(function(){
 //              framePlayer.set("fps",20);
 
             $(".fa-play").on("click",function(){
-                var fps = $(".fps").val();
-                var yoyo = $(".yoyo").is(':checked');
-                var start = $(".start").val();
-                var end = $(".end").val();
-                var $selectedvalue = $("input[name='mode']:checked").val();
+                var fps = settings.find(".fps").val();
+                var yoyo = settings.find(".yoyo").is(':checked');
+                var start = settings.find(".start").val();
+                var end = settings.find(".end").val();
+                var $selectedvalue = settings.find("input[name='mode']:checked").val();
                 var useCanvas = $selectedvalue === "true";
                 framePlayer.play(start,end,{"fps":fps,"yoyo":yoyo,"useCanvas":useCanvas,onComplete:function(){
 //                      console.log("完成播放");
