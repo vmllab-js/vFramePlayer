@@ -54,8 +54,8 @@ var framePlayer = new vFramePlayer({
 | `pause()`       | none                   | 暂停播放动画。|
 | `stop()`        | none                   | 停止播放动画，重置数据。|
 | `destroy()`     | none                   | 清除所有动画及监听事件。|
-| `get()`         | `attr`                 | 获取参数值。可获取参数同[Options](#options)Field。type:`string`。 |
-| `set()`         | `attr`                 | 设置参数值。可设置参数同[Options](#options)Field。type:`string`。 |
+| `get()`         | `attr`                 | 获取参数值。可获取参数同[Options](#options) Field列。type:`string`。 |
+| `set()`         | `attr`                 | 设置参数值。可设置参数同[Options](#options) Field列。type:`string`。 |
 
 `play()`<span id="play">方法参数：</span>
 
