@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>FramePlayer Demo</title>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="../src/vframeplayer.min.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="box">
+    <div class="framePlayer"></div>
+    <div class="control">
+        <i class="fa fa-play"></i>
+        <i class="fa fa-pause"></i>
+        <i class="fa fa-backward"></i>
+        <i class="fa fa-stop"></i>
+        <i class="fa fa-forward"></i>
+        <div class="process_bar">
+            <div class="process"></div>
+        </div>
+    </div>
+    <div class="info">
+        <div class="curFrame">当前帧：<span></span></div>
+        <div class="times">循环次数：<span></span></div>
+        <div class="asc">正序：<span></span></div>
+        <div class="fps">FPS：<span></span></div>
+    </div>
+</div>
+
+<div class="settings">
+    <div>
+        <span>模式：</span>
+        <label><input class="mode" name="mode" type="radio" value="true" checked /> CANVAS</label>
+        <label><input class="mode" name="mode" type="radio" value="false" /> IMG</label>
+    </div>
+    <div>
+        <label><span>开始帧：</span><input min="0" class="start" name="start" type="number" value="" /></label>
+        <label><span>结束帧：</span><input min="0" class="end" name="end" type="number" value="" /></label>
+    </div>
+    <div>
+        <label><span>FPS：</span><input min="1" max="60" class="fps" name="fps" type="number" value="" /></label>
+        <label><span>次数：</span><input min="-1" class="times" name="times" type="number" value="" /></label>
+    </div>
+    <div>
+        <label><span>yoyo：</span><input class="yoyo" name="yoyo" type="checkbox" value="" /></label>
+    </div>
+</div>
+</body>
+</html>
