@@ -39,7 +39,7 @@ var framePlayer = new vFramePlayer({
     dom : document.getElementById("framePlayer"),
     imgArr : imgArr,
     fps : 30,
-    userCanvas : false,
+    useCanvas : false,
     loop : 10,
     yoyo : true
 });
